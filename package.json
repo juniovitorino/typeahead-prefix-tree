@@ -1,0 +1,28 @@
+{
+  "name": "typeahead-backend-juniovitorino",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matilda-applicants/typeahead-backend-juniovitorino.git"
+  },
+  "keywords": [],
+  "author": "Junio Vitorino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matilda-applicants/typeahead-backend-juniovitorino/issues"
+  },
+  "homepage": "https://github.com/matilda-applicants/typeahead-backend-juniovitorino#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

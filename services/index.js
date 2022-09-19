@@ -1,8 +1,8 @@
-const { filter } = require("../store")
+const { PrefixTree } = require('../store')
 
 module.exports = {
-  search: (req, res) => {
-    const { prefix } = req.params || ''
-    res.send(filter(prefix))
+  search: (_, res) => {
+    console.debug(PrefixTree)
+    res.send()
   }
 } 

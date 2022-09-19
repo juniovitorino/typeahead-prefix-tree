@@ -1,16 +1,14 @@
-const fs = require('fs')
+const fs = require('fs');
+const { PrefixTree } = require('./lib/PrefixTree')
 
-const db = JSON.parse(fs.readFileSync('./names.json', { encoding: 'utf8' }, (error, data) => {
-  if (error) throw error;
-  return data;
-}));
+const NamesData = fs.createReadStream('./names.json');
 
-const filter = (prefix) => {
-  Object.keys(db).map((item) => {
-    if (item === prefix) {
-      console.debug(db[item]);
-    }
-  })
-}
+NamesData.on('data', (chunk) => {
+  Object.keys(JSON.parse(chunk.toString())).map(name => PrefixTree.addWord(name))
+});
 
-module.exports = { db, filter }
+NamesData.on('error', (err) => {
+  throw err;
+})
+
+module.exports = { PrefixTree }

@@ -5,8 +5,8 @@ const NamesData = fs.createReadStream('./names.json');
 NamesData.on('data', (chunk) => {
   const data = JSON.parse(chunk.toString())
   Object.keys(data).map(key => {
-    const value = parseInt(data[key])
-    if (!isNaN(value)) PrefixTree.insert(key, value)
+    const times = parseInt(data[key])
+    if (!isNaN(times)) PrefixTree.insert({ key, times })
   })
 });
 

@@ -1,6 +1,5 @@
 const fs = require('fs');
 const { PrefixTree } = require('./lib/PrefixTree')
-// const NamesData = fs.createReadStream('./test.json');
 const NamesData = fs.createReadStream('./names.json');
 
 NamesData.on('data', (chunk) => {

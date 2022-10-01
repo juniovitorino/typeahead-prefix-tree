@@ -11,7 +11,7 @@ const {
 
 const server = express();
 
-app.use(bodyParser.json({ type: 'application/json' })) // Add bodyParser middleware
+server.use(bodyParser.json({ type: 'application/json' })) // Add bodyParser middleware
 
 // Routes
 server.get(`/typeahead/:prefix`, filterByPrefix);

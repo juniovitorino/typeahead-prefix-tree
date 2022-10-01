@@ -1,14 +1,17 @@
 const fs = require('fs');
-const { PrefixTree } = require('./lib/PrefixTree')
 const NamesData = fs.createReadStream('./names.json');
+
+const { PrefixTree } = require('./lib/PrefixTree')
+const prefixTree = new PrefixTree()
 
 NamesData.on('data', (chunk) => {
   const data = JSON.parse(chunk.toString())
   Object.keys(data).map(key => {
     const times = parseInt(data[key])
-    if (!isNaN(times)) PrefixTree.insert({ key, times })
+    if (!isNaN(times)) prefixTree.insert({ key, times })
   })
 });
 
 NamesData.on('error', err => { throw err })
-module.exports = { PrefixTree }
+
+module.exports = { PrefixTree: prefixTree }

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const NamesData = fs.createReadStream('./names.json');
+const NamesData = fs.createReadStream('./data/names.json');
 
 const { PrefixTree } = require('./lib/PrefixTree')
 const prefixTree = new PrefixTree()
